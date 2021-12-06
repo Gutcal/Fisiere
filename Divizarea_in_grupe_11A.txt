@@ -1,0 +1,19 @@
+f=open('Lista_Clasei_11A.txt', 'r')
+linii=list(f)
+f.close()
+print('Nume', 'Prenume', 'Nota', sep='\t')
+x=open('Lista ñlasei 11A-grupa Engleza.txt', 'w')
+y=open('Lista ñlasei 11A-grupa Germana.txt', 'w')
+for linie in linii:
+    print(linie.strip())
+    campuri=linie.split()
+    nota=int(campuri[2])
+    n+=1
+    media+=nota
+    if campuri[3]=='A':
+        x.write(campuri[0]+' '+campuri[1]+' '+campuri[2])
+        x.write('\n')
+    if campuri[3]=='B':
+        y.write(campuri[0]+' '+campuri[1]+' '+campuri[2])
+        y.write('\n')
+print('Media celor', n, 'elevi este', media/float(n))
